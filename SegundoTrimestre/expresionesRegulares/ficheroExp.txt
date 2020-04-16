@@ -3,8 +3,8 @@ las expresiones regulares
 Lorem ipsum dolor @usuario sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt @usuario2 ut labore el@usuario et dolore magna
 aliqua. Ut enim  6789CGH ad minim veniam, quis 1234GHJ nostrud exercitation
-ullamco 12345678J laboris nisi ut aliquip 34567890C ex ea commodo 67687C consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit
-esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia 
-deserunt mollit anim id est laborum.
+ullamco 12345678J laboris 23/02/2015 nisi ut aliquip 34567890C ex ea commodo 67687C consequat.
+Duis aute irure dolor in reprehenderit in voluptate 08/11/2000 velit
+esse cillum dolore eu fugiat #FF5733 nulla pariatur. Excepteur sint
+occaecat #123 cupidatat #1s, non 192.168.15.12 proident, sunt in culpa 20/2323/2 qui officia 
+deserunt 4000.23.4.6 mollit anim id est laborum.
