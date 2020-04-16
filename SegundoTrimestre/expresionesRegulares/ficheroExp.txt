@@ -1,0 +1,10 @@
+Esto es un fichero de pruebas para 
+las expresiones regulares
+Lorem ipsum dolor @usuario sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt @usuario2 ut labore el@usuario et dolore magna
+aliqua. Ut enim  6789CGH ad minim veniam, quis 1234GHJ nostrud exercitation
+ullamco 12345678J laboris nisi ut aliquip 34567890C ex ea commodo 67687C consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.
