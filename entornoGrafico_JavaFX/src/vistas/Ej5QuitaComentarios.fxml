@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" prefHeight="700.0" prefWidth="500.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.Ej5QuitaComentariosControlador">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label text="Pulse el botón para seleccionar un archivo:" GridPane.rowIndex="1">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label text="Quita Comentarios de un Programa:" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font></Label>
+      <TextArea fx:id="resultadosinComentarios" editable="false" prefHeight="320.0" prefWidth="460.0" GridPane.rowIndex="9" />
+      <Label text="Programa Sin Comentarios:" GridPane.rowIndex="7">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#quitaComentarios" text="Seleccionar Archivo" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+      <TextArea fx:id="resultadoConComentarios" editable="false" prefHeight="320.0" prefWidth="460.0" GridPane.rowIndex="6" />
+      <Label text="Programa Con Comentarios:" GridPane.rowIndex="5" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

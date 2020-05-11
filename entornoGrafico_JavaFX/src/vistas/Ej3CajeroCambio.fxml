@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" prefHeight="579.0" prefWidth="732.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.Ej3CajeroCambioControlador">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints maxWidth="37.0" minWidth="35.0" prefWidth="35.0" />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Label GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <Label GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+      <Label GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+      <Label GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+      <Label GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+      <Label prefHeight="25.0" prefWidth="228.0" text="Introduce el dinero a desglosar:" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="numero" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <TextArea fx:id="resultado500e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextArea fx:id="resultado200e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextArea fx:id="resultado100e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextArea fx:id="resultado50e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <TextArea fx:id="resultado20e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <TextArea fx:id="resultado5e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <TextArea fx:id="resultado10e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <Label GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+      <Label GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+      <Label prefHeight="26.0" prefWidth="51.0" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+      <Label GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+      <Label text="10cts:" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+      <Label text="5cts:" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+      <Label text="2cts:" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+      <Label text="1cts:" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+      <TextArea fx:id="resultado2e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+      <TextArea fx:id="resultado1e" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+      <TextArea fx:id="resultado50cts" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+      <TextArea fx:id="resultado20cts" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+      <TextArea fx:id="resultado10cts" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+      <TextArea fx:id="resultado5cts" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+      <TextArea fx:id="resultado2cts" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+      <TextArea fx:id="resultado1cts" editable="false" prefHeight="43.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+      <Button mnemonicParsing="false" onAction="#calcular" text="Calcular" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+      <Button alignment="CENTER" mnemonicParsing="false" onAction="#resetear" text="Resetear" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+      <Label alignment="CENTER" contentDisplay="CENTER" text="Cajero de Cambio:" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="55.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+         <image>
+            <Image url="@../../billete500.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+         <image>
+            <Image url="@../../billete200.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+         <image>
+            <Image url="@../../billete50.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+         <image>
+            <Image url="@../../billete100.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+         <image>
+            <Image url="@../../billete20.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+         <image>
+            <Image url="@../../billete10.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+         <image>
+            <Image url="@../../billete5.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+         <image>
+            <Image url="@../../moneda2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+         <image>
+            <Image url="@../../moneda1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <image>
+            <Image url="@../../moneda50.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+         <image>
+            <Image url="@../../moneda20.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+         <image>
+            <Image url="@../../moneda10.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+         <image>
+            <Image url="@../../moneda5.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+         <image>
+            <Image url="@../../moneda2cts.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="70.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+         <image>
+            <Image url="@../../moneda1cts.jpg" />
+         </image>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>

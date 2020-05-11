@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.Ej4MezclaFicherosControlador">
+   <children>
+      <Label text="Selecciona el primer fichero:" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#abrirfichero1" text="Fichero 1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Label text="Selecciona el segundo fichero:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" onAction="#abrirfichero2" text="Fichero 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+      <Label alignment="CENTER" text="Mezcla el contenido de dos ficheros:" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+         <font>
+            <Font name="Arial" size="17.0" />
+         </font></Label>
+      <TextArea fx:id="resultado" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button mnemonicParsing="false" onAction="#mezclar" text="Mezclar Ficheros" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+      <TextArea fx:id="contenidoFichero1" prefHeight="113.0" prefWidth="200.0" GridPane.rowIndex="4" />
+      <TextArea fx:id="contenidoFichero2" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>
