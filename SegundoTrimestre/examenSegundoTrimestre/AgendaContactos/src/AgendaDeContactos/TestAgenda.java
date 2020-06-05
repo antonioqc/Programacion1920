@@ -7,7 +7,6 @@ import utiles.Teclado;
  * Clase TestAgenda, donde se realiza la comunicación con el usuario (mostrar
  * menú y recuperar opción del menú mostrar errores, listar) y se manipula la
  * agenda de contactos.
- * 
  * @author Antonio Quesada Cuadrado
  * 
  */
