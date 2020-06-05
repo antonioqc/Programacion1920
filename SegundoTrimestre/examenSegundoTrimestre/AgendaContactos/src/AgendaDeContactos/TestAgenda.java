@@ -83,9 +83,13 @@ public class TestAgenda {
 	 * Borramos un contacto a la agenda, recogiendo los datos por usuario.
 	 */
 	private static void baja() {
-		String nombre = Teclado.getTexto("Introduce el nombre del contacto a dar de baja: ");
-		if (!agenda.baja(nombre))
-			System.err.println("El nombre del contacto ya existe. Vuelve a intentarlo." + "\n");
+		try {
+			String nombre = Teclado.getTexto("Introduce el nombre del contacto a dar de baja: ");
+			String telefono = Teclado.getTexto("Introduce el telefono del contacto a dar de baja: ");
+			agenda.baja(nombre, telefono);
+		} catch (ContactoInexistenteException e) {
+			System.err.println(e.getMessage() + "\n");
+		}
 	}
 
 	/**
