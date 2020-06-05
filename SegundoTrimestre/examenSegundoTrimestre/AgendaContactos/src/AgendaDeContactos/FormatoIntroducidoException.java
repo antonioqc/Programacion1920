@@ -10,8 +10,9 @@ package AgendaDeContactos;
 
 @SuppressWarnings("serial")
 public class FormatoIntroducidoException extends Exception {
-	public FormatoIntroducidoException(String mensaje) {
-		super(mensaje);
-	}
+	
+  public FormatoIntroducidoException(String mensaje) {
+    super(mensaje);
+  }
 
 }
