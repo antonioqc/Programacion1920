@@ -1,7 +1,7 @@
 package utiles;
 
 /**
- * Implementamos el menú para Test Almacen.
+ * Implementamos el menú para Test Agenda.
  * 
  * @author Antonio Quesada Cuadrado
  *
@@ -12,10 +12,10 @@ public class Menu {
   private String opciones[];
   
   /**
-	 * 
-	 * @param nombre titulo del menú
-	 * @param opciones opciones del menú
-	 */
+   * 
+   * @param nombre titulo del menú
+   * @param opciones opciones del menú
+   */
   public Menu(String nombre, String[] opciones) {
     this.nombre = nombre;
     this.opciones = opciones;
@@ -30,23 +30,23 @@ public class Menu {
     return recogerOpciones();
   }
   
-	/**
-	 * Recoge la opción válida del menú
-	 * 
-	 * @return opción válida
-	 */
+  /**
+   * Recoge la opción válida del menú
+   * 
+   * @return opción válida
+   */
   private int recogerOpciones() {
     int opcion = -1;
     do {
       opcion = Teclado.getEntero("Elige una opción: ");
-    }while (opcion < 1 || opcion > opciones.length);
+    } while (opcion < 1 || opcion > opciones.length);
     
     return opcion;
   }
 
-  /**
-	 * Muestra las opciones del menú
-	 */
+  /** 
+   * Muestra las opciones del menú
+   */
   private void mostrar() {
     int i = 1;
     System.out.println(nombre);
