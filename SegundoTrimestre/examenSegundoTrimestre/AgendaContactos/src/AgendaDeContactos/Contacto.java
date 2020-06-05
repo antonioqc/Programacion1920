@@ -33,16 +33,30 @@ public class Contacto {
 	private String correoElectronico;
 
 	/**
-	 * Primer constructor. Usado para dar de baja y buscar a un contacto en la
-	 * agenda.
+	 * Primer constructor.
 	 * @param nombre
+	 * @param telefono
+	 * @throws FormatoIntroducidoException 
 	 */
-	public Contacto(String nombre) {
-		this.nombre = nombre;
+	public Contacto(String nombre, String telefono) throws FormatoIntroducidoException {	
+		setNombre(nombre);
+		setTelefono(telefono);
 	}
-
+	
 	/**
-	 * Segundo constructor. Usado para añadir contactos a la agenda.
+	 * Segundo constructor.
+	 * @param nombre
+	 * @param telefono
+	 * @param direccion
+	 * @throws FormatoIntroducidoException
+	 */
+	public Contacto(String nombre, String telefono, String direccion) throws FormatoIntroducidoException {	
+		setNombre(nombre);
+		setTelefono(telefono);
+		setDireccion(direccion);
+	}
+	/**
+	 * Tercer constructor.
 	 * @param nombre
 	 * @param telefono
 	 * @param direccion
@@ -80,7 +94,7 @@ public class Contacto {
 	 */
 	public void setNombre(String nombre) throws FormatoIntroducidoException {
 		if (!nombre.matches("^[a-zA-Z-_' ']{1,100}$"))
-			throw new FormatoIntroducidoException("Debes introducir un nombre compuesto por letras y espacios.");
+			throw new FormatoIntroducidoException("Nombre inválido (contiene caracteres que no son letras y espacios)");
 		this.nombre = nombre;
 	}
 
@@ -129,7 +143,7 @@ public class Contacto {
 	 */
 	public void setCorreoElectronico(String correoElectronico) throws FormatoIntroducidoException {
 		if (!correoElectronico.matches("[^@]+@[^@]+\\.[a-zA-Z]{2,}"))
-			throw new FormatoIntroducidoException("Formato de correo electrónico inválido.Debe contener un nombre, una @ y un dominio con su extensión.");
+			throw new FormatoIntroducidoException("Formato de correo electrónico inválido. No contiene una @ y un dominio con su extensión.");
 		this.correoElectronico = correoElectronico;
 	}
 
