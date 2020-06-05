@@ -2,7 +2,6 @@ package AgendaDeContactos;
 
 /**
  * Excepción para cuando el contacto indicado no exista.
- * 
  * @author Antonio Quesada Cuadrado
  *
  */
