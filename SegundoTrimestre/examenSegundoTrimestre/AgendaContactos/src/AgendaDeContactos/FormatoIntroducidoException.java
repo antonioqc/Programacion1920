@@ -3,7 +3,6 @@ package AgendaDeContactos;
 /**
  * Excepción para las expresiones regulares. Controla que el usuario introduzca
  * datos con formato correcto.
- * 
  * @author Antonio Quesada Cuadrado
  *
  */
