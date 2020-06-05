@@ -134,7 +134,7 @@ public class Agenda {
 			+ contacto.getCorreoElectronico());
       csv.newLine();
     }
-     csv.close();
+    csv.close();
 
     } catch (IOException e) {
       throw new CSVException("Error de escritura en " + archivo);
