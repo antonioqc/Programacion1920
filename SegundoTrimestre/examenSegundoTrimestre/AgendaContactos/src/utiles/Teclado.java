@@ -9,77 +9,71 @@ import java.util.Scanner;
  *
  */
 public class Teclado {
-	private static Scanner sc = new Scanner(System.in);
+  private static Scanner sc = new Scanner(System.in);
 
-	/**
-	 * Lee teclado cuando se introduce cadena.
-	 * 
-	 * @param mensaje
-	 * @return lee cadena
-	 */
-	public static String getTexto(String mensaje) {
-		System.out.println(mensaje);
-		return getTexto();
+  /**
+   * Lee teclado cuando se introduce cadena.
+   * 
+   * @param mensaje
+   * @return lee cadena
+   */
+  public static String getTexto(String mensaje) {
+    System.out.println(mensaje);
+    return getTexto();
+  }
 
-	}
+  public static String getTexto() {
+    return sc.nextLine();	
+  }
 
-	public static String getTexto() {
-		return sc.nextLine();	
+  /**
+   * Lee teclado cuando se introduce un entero.
+   * 
+   * @param mensaje
+   * @return lee entero
+   */
+  public static int getEntero(String mensaje) {
+    System.out.println(mensaje);
+    return getEntero();
+  }
 
-	}
+  public static int getEntero() {
+    do {
 
-	/**
-	 * Lee teclado cuando se introduce entero.
-	 * 
-	 * @param mensaje
-	 * @return lee entero
-	 */
-	public static int getEntero(String mensaje) {
-		System.out.println(mensaje);
-		return getEntero();
+      try {
+        return Integer.parseInt(getTexto());
 
-	}
+      } catch (NumberFormatException e) {
 
-	public static int getEntero() {
-		do {
+	System.err.println("¡ERROR! Debes introducir un número entero:");
 
-			try {
-				return Integer.parseInt(getTexto());
+      }
 
-			} catch (NumberFormatException e) {
+    } while (true);
+  }
+	
+  /**
+   * Lee teclado cuando se introduce decimal.
+   * 
+   * @param mensaje
+   * @return lee entero
+   */
+  public static int getDecimal(String mensaje) {
+    System.out.println(mensaje);
+    return getDecimal();
+  }
 
-				System.err.println("¡ERROR! Debes introducir un número entero:");
+  public static int getDecimal() {
+    do {
 
-			}
+      try {
+        return Double.parseDouble(getTexto());
 
-		} while (true);
-	}
+      } catch (NumberFormatException e) {
 
-	/**
-	 * Lee teclado cuando se introduce decimal.
-	 * 
-	 * @param mensaje
-	 * @return lee decimal.
-	 */
-	public static double getDecimal(String mensaje) {
-		System.out.println(mensaje);
-		return getDecimal();
+	System.err.println("¡ERROR! Vuelve a introducir un número:");
 
-	}
+      }
 
-	public static double getDecimal() {
-		do {
-
-			try {
-				return Double.parseDouble(getTexto());
-
-			} catch (NumberFormatException e) {
-
-				System.err.println("¡ERROR! Vuelve a introducir un número:");
-
-			}
-
-		} while (true);
-	}
-
-}
+    } while (true);
+  }
