@@ -10,7 +10,7 @@ package AgendaDeContactos;
 @SuppressWarnings("serial")
 public class MaximoContactosException extends Exception {
 
-	public MaximoContactosException(String mensaje) {
-		super(mensaje);
-	}
+  public MaximoContactosException(String mensaje) {
+    super(mensaje);
+  }
 }
