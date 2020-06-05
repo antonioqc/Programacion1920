@@ -50,9 +50,9 @@ public class Contacto {
    * @throws FormatoIntroducidoException
    */
   public Contacto(String nombre, String telefono, String direccion) throws FormatoIntroducidoException {	
-   setNombre(nombre);
-   setTelefono(telefono);
-   setDireccion(direccion);
+    setNombre(nombre);
+    setTelefono(telefono);
+    setDireccion(direccion);
   }
 	
   /**
@@ -64,10 +64,10 @@ public class Contacto {
    * @throws FormatoIntroducidoException
    */
   public Contacto(String nombre, String telefono, String direccion, String correoElectronico) throws FormatoIntroducidoException {
-   setNombre(nombre);
-   setTelefono(telefono);
-   setDireccion(direccion);
-   setCorreoElectronico(correoElectronico);
+    setNombre(nombre);
+    setTelefono(telefono);
+    setDireccion(direccion);
+    setCorreoElectronico(correoElectronico);
  }
 
   /**
