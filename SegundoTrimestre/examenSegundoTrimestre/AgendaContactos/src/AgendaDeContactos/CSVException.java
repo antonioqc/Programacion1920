@@ -10,8 +10,8 @@ package AgendaDeContactos;
 @SuppressWarnings("serial")
 public class CSVException extends Exception {
 
-	public CSVException(String mensaje) {
-		super(mensaje);
-	}
+  public CSVException(String mensaje) {
+    super(mensaje);
+  }
 
 }
