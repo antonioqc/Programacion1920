@@ -35,37 +35,37 @@ public class Agenda {
   private ArrayList<Contacto> agenda = new ArrayList<Contacto>();
   static final int NUMMAXCONTACTOS = 100; // constante que asigna el valor máximo de contactos de la agenda.
 
-/**
- * Primer constructor vacío.
- */
+  /**
+   * Primer constructor vacío.
+   */
   public Agenda() {
 
   }
 
- /**
-  * Segundo constructor que recibe un fichero con información de contactos.
-  * @param fichero
-  * @throws CSVException
-  */
+  /**
+   * Segundo constructor que recibe un fichero con información de contactos.
+   * @param fichero
+   * @throws CSVException
+   */
   public Agenda(String archivo) throws CSVException {
     exportaCSV(archivo);
   }
 
- /**
-  * Añadimos un contacto a la agenda.
-  * @param nombre
-  * @param telefono
-  * @param direccion
-  * @param correoElectronico
-  * @throws FormatoIntroducidoException
-  * @throws MaximoContactos
-  */
+  /**
+   * Añadimos un contacto a la agenda.
+   * @param nombre
+   * @param telefono
+   * @param direccion
+   * @param correoElectronico
+   * @throws FormatoIntroducidoException
+   * @throws MaximoContactos
+   */
   public void annadir(String nombre, String telefono, String direccion, String correoElectronico) throws MaximoContactosException, FormatoIntroducidoException {
     if (agenda.size() >= NUMMAXCONTACTOS)
       throw new MaximoContactosException("Has sobrepasado el máximo de contactos que es 100.");
 
     agenda.add(new Contacto(nombre, telefono, direccion, correoElectronico));
-}
+ }
 
   /**
    * Borramos un contacto de la agenda.
@@ -163,8 +163,8 @@ public class Agenda {
    }
    csv.close();
 
-} catch (Exception e) {
-    throw new CSVException("Error de lectura en " + archivo);
+ } catch (Exception e) {
+   throw new CSVException("Error de lectura en " + archivo);
   }
 }
 
