@@ -10,7 +10,7 @@ package AgendaDeContactos;
 @SuppressWarnings("serial")
 public class ContactoInexistenteException extends Exception {
 
-	public ContactoInexistenteException(String mensaje) {
-		super(mensaje);
-	}
+  public ContactoInexistenteException(String mensaje) {
+    super(mensaje);
+  }
 }
