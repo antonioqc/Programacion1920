@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /**
  * Implementamos clase teclado.
- * 
  * @author Antonio Quesada Cuadrado
  *
  */
