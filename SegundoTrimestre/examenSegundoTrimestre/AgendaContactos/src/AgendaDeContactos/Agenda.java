@@ -33,7 +33,23 @@ import java.util.ArrayList;
 
 public class Agenda {
 	private ArrayList<Contacto> agenda = new ArrayList<Contacto>();
-	static int NUMMAXCONTACTOS = 100; // constante que asigna el valor máximo de contactos de la agenda.
+	static final int NUMMAXCONTACTOS = 100; // constante que asigna el valor máximo de contactos de la agenda.
+
+	/**
+	 * Primer constructor vacío.
+	 */
+	public Agenda() {
+
+	}
+
+	/**
+	 * Segundo constructor que recibe un fichero con información de contactos.
+	 * @param fichero
+	 * @throws CSVException
+	 */
+	public Agenda(String archivo) throws CSVException {
+		exportaCSV(archivo);
+	}
 
 	/**
 	 * Añadimos un contacto a la agenda.
@@ -44,8 +60,9 @@ public class Agenda {
 	 * @throws FormatoIntroducidoException
 	 * @throws MaximoContactos
 	 */
-	public void annadir(String nombre, String telefono, String direccion, String correoElectronico) throws MaximoContactosException, FormatoIntroducidoException {
-		if (agenda.size() > NUMMAXCONTACTOS)
+	public void annadir(String nombre, String telefono, String direccion, String correoElectronico)
+			throws MaximoContactosException, FormatoIntroducidoException {
+		if (agenda.size() >= NUMMAXCONTACTOS)
 			throw new MaximoContactosException("Has sobrepasado el máximo de contactos que es 100.");
 
 		agenda.add(new Contacto(nombre, telefono, direccion, correoElectronico));
@@ -56,41 +73,55 @@ public class Agenda {
 	 * @param nombre del contacto a borrar
 	 * @return valor booleano que devuelve la baja de un contacto a través del
 	 *         nombre.
+	 * @throws ContactoInexistenteException
 	 */
-	public boolean baja(String nombre) {
-		return agenda.remove(new Contacto(nombre));
+	public Contacto baja(String nombre, String telefono) throws ContactoInexistenteException {
+		for (Contacto contacto : agenda) {
+			if (nombre.contentEquals(contacto.getNombre())) {
+				return agenda.remove(agenda.indexOf(contacto));
+			} else {
+				throw new ContactoInexistenteException("El contacto a borrar no existe.");
+			}
+		}
+		return null;
 	}
 
 	/**
 	 * Busca toda la información de una contacto.
-	 * @param nombre del contacto a buscar
-	 * @return la información entera de un contacto a través del nombre
+	 * @param nombre
+	 * @return contactos encontrados
 	 * @throws ContactoInexistenteException
 	 */
 	public Contacto buscaContacto(String nombre) throws ContactoInexistenteException {
-		try {
-			System.out.println(agenda.get(agenda.indexOf(new Contacto(nombre))));
-		} catch (IndexOutOfBoundsException e) {
-			throw new ContactoInexistenteException("El nombre del contacto introducido no existe.");
+		for (Contacto contacto : agenda) {
+			if (nombre.contentEquals(contacto.getNombre())) {
+				return agenda.get(agenda.indexOf(contacto));
+			} else {
+				throw new ContactoInexistenteException("El contacto a buscar no existe.");
+			}
 		}
 		return null;
 	}
 
 	/**
 	 * Reduce el tamaño de la agenda.
+	 * 
 	 * @param numContactosActual numero de contactos a pedir
 	 * @return numero maximo de contactos modificado
 	 * @throws MaximoContactosException
 	 */
 	public int reduce(int numContactosActual) throws MaximoContactosException {
-		if (numContactosActual > 0 && numContactosActual < NUMMAXCONTACTOS)
-			return NUMMAXCONTACTOS = numContactosActual; //al modificarse el número de contactos java me obliga a quitar el 'final' de la constante (static int NUMMAXCONTACTOS).
+		int tamanio = agenda.size();
+		if (tamanio < numContactosActual && numContactosActual < NUMMAXCONTACTOS)
+			return tamanio = numContactosActual;
 
-		throw new MaximoContactosException("No puedes reducir el tamaño de la agenda. Has introducido un número mayor a los contactos permitidos (100).");
+		throw new MaximoContactosException(
+				"No puedes reducir el tamaño de la agenda. Has introducido un número mayor a los contactos permitidos (100).");
 	}
 
 	/**
 	 * Exportamos la información de contactos a un archivo CSV.
+	 * 
 	 * @param archivo a exportar
 	 * @throws CSVException
 	 */
@@ -113,6 +144,7 @@ public class Agenda {
 
 	/**
 	 * Importamos la información de contactos a un archivo CSV.
+	 * 
 	 * @param archivo a importar
 	 * @throws CSVException
 	 */
