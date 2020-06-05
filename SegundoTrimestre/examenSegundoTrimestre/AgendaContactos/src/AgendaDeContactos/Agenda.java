@@ -32,149 +32,147 @@ import java.util.ArrayList;
  */
 
 public class Agenda {
-	private ArrayList<Contacto> agenda = new ArrayList<Contacto>();
-	static final int NUMMAXCONTACTOS = 100; // constante que asigna el valor máximo de contactos de la agenda.
+  private ArrayList<Contacto> agenda = new ArrayList<Contacto>();
+  static final int NUMMAXCONTACTOS = 100; // constante que asigna el valor máximo de contactos de la agenda.
 
-	/**
-	 * Primer constructor vacío.
-	 */
-	public Agenda() {
+/**
+ * Primer constructor vacío.
+ */
+  public Agenda() {
 
-	}
+  }
 
-	/**
-	 * Segundo constructor que recibe un fichero con información de contactos.
-	 * @param fichero
-	 * @throws CSVException
-	 */
-	public Agenda(String archivo) throws CSVException {
-		exportaCSV(archivo);
-	}
+ /**
+  * Segundo constructor que recibe un fichero con información de contactos.
+  * @param fichero
+  * @throws CSVException
+  */
+  public Agenda(String archivo) throws CSVException {
+    exportaCSV(archivo);
+  }
 
-	/**
-	 * Añadimos un contacto a la agenda.
-	 * @param nombre
-	 * @param telefono
-	 * @param direccion
-	 * @param correoElectronico
-	 * @throws FormatoIntroducidoException
-	 * @throws MaximoContactos
-	 */
-	public void annadir(String nombre, String telefono, String direccion, String correoElectronico)
-			throws MaximoContactosException, FormatoIntroducidoException {
-		if (agenda.size() >= NUMMAXCONTACTOS)
-			throw new MaximoContactosException("Has sobrepasado el máximo de contactos que es 100.");
+ /**
+  * Añadimos un contacto a la agenda.
+  * @param nombre
+  * @param telefono
+  * @param direccion
+  * @param correoElectronico
+  * @throws FormatoIntroducidoException
+  * @throws MaximoContactos
+  */
+  public void annadir(String nombre, String telefono, String direccion, String correoElectronico) throws MaximoContactosException, FormatoIntroducidoException {
+    if (agenda.size() >= NUMMAXCONTACTOS)
+      throw new MaximoContactosException("Has sobrepasado el máximo de contactos que es 100.");
 
-		agenda.add(new Contacto(nombre, telefono, direccion, correoElectronico));
-	}
+    agenda.add(new Contacto(nombre, telefono, direccion, correoElectronico));
+}
 
-	/**
-	 * Borramos un contacto de la agenda.
-	 * @param nombre del contacto a borrar
-	 * @return valor booleano que devuelve la baja de un contacto a través del
-	 *         nombre.
-	 * @throws ContactoInexistenteException
-	 */
-	public Contacto baja(String nombre, String telefono) throws ContactoInexistenteException {
-		for (Contacto contacto : agenda) {
-			if (nombre.contentEquals(contacto.getNombre())) {
-				return agenda.remove(agenda.indexOf(contacto));
-			} else {
-				throw new ContactoInexistenteException("El contacto a borrar no existe.");
-			}
-		}
-		return null;
-	}
+  /**
+   * Borramos un contacto de la agenda.
+   * @param nombre del contacto a borrar
+   * @return valor booleano que devuelve la baja de un contacto a través del
+   *         nombre.
+   * @throws ContactoInexistenteException
+   */
+  public Contacto baja(String nombre, String telefono) throws ContactoInexistenteException {
+    for (Contacto contacto : agenda) {
+      if (nombre.contentEquals(contacto.getNombre())) {
+        return agenda.remove(agenda.indexOf(contacto));
+       } else {
+	throw new ContactoInexistenteException("El contacto a borrar no existe.");
+       }
+    }
+    return null;
+  }
 
-	/**
-	 * Busca toda la información de una contacto.
-	 * @param nombre
-	 * @return contactos encontrados
-	 * @throws ContactoInexistenteException
-	 */
-	public Contacto buscaContacto(String nombre) throws ContactoInexistenteException {
-		for (Contacto contacto : agenda) {
-			if (nombre.contentEquals(contacto.getNombre())) {
-				return agenda.get(agenda.indexOf(contacto));
-			} else {
-				throw new ContactoInexistenteException("El contacto a buscar no existe.");
-			}
-		}
-		return null;
-	}
+ /**
+  * Busca toda la información de una contacto.
+  * @param nombre
+  * @return contactos encontrados
+  * @throws ContactoInexistenteException
+  */
+ public Contacto buscaContacto(String nombre, String telefono) throws ContactoInexistenteException {
+    for (Contacto contacto : agenda) {
+      if (nombre.contentEquals(contacto.getNombre())) {
+        return agenda.get(agenda.indexOf(contacto));
+       } else {
+	throw new ContactoInexistenteException("El contacto a borrar no existe.");
+       }
+    }
+    return null;
+  }
 
-	/**
-	 * Reduce el tamaño de la agenda.
-	 * 
-	 * @param numContactosActual numero de contactos a pedir
-	 * @return numero maximo de contactos modificado
-	 * @throws MaximoContactosException
-	 */
-	public int reduce(int numContactosActual) throws MaximoContactosException {
-		int tamanio = agenda.size();
-		if (tamanio < numContactosActual && numContactosActual < NUMMAXCONTACTOS)
-			return tamanio = numContactosActual;
+ /**
+  * Reduce el tamaño de la agenda.
+  * 
+  * @param numContactosActual numero de contactos a pedir
+  * @return numero maximo de contactos modificado
+  * @throws MaximoContactosException
+  */
+ public int reduce(int numContactosActual) throws MaximoContactosException {
+   int tamanio = agenda.size();
+     if (tamanio < numContactosActual && numContactosActual < NUMMAXCONTACTOS)
+       return tamanio = numContactosActual;
 
-		throw new MaximoContactosException(
-				"No puedes reducir el tamaño de la agenda. Has introducido un número mayor a los contactos permitidos (100).");
-	}
+     throw new MaximoContactosException(
+			"No puedes reducir el tamaño de la agenda. Has introducido un número mayor a los contactos permitidos (100).");
+ }
 
-	/**
-	 * Exportamos la información de contactos a un archivo CSV.
-	 * 
-	 * @param archivo a exportar
-	 * @throws CSVException
-	 */
-	public void exportaCSV(String archivo) throws CSVException {
-		try {
-			BufferedWriter csv = new BufferedWriter(new FileWriter(archivo));
-			csv.write("Nombre, Teléfono, Dirección, Correo Electrónico");
-			csv.newLine();
-			for (Contacto contacto : agenda) {
-				csv.write(contacto.getNombre() + ",\"" + contacto.getTelefono() + ",\"" + contacto.getDireccion() + ",\""
-						+ contacto.getCorreoElectronico());
-				csv.newLine();
-			}
-			csv.close();
+ /**
+  * Exportamos la información de contactos a un archivo CSV.
+  * 
+  * @param archivo a exportar
+  * @throws CSVException
+  */
+ public void exportaCSV(String archivo) throws CSVException {
+   try {
+    BufferedWriter csv = new BufferedWriter(new FileWriter(archivo));
+    csv.write("Nombre, Teléfono, Dirección, Correo Electrónico");
+    csv.newLine();
+    for (Contacto contacto : agenda) {
+      csv.write(contacto.getNombre() + ",\"" + contacto.getTelefono() + ",\"" + contacto.getDireccion() + ",\""
+			+ contacto.getCorreoElectronico());
+      csv.newLine();
+    }
+     csv.close();
 
-		} catch (IOException e) {
-			throw new CSVException("Error de escritura en " + archivo);
-		}
-	}
+    } catch (IOException e) {
+      throw new CSVException("Error de escritura en " + archivo);
+    }
+}
 
-	/**
-	 * Importamos la información de contactos a un archivo CSV.
-	 * 
-	 * @param archivo a importar
-	 * @throws CSVException
-	 */
-	public void importaCSV(String archivo) throws CSVException {
-		try {
-			BufferedReader csv = new BufferedReader(new FileReader(archivo));
-			String linea = csv.readLine();
-			linea = csv.readLine(); // lectura de la primera línea
-			while (linea != null) {
-				String[] elemento = linea.split(",");
-				// Con el método annadir se añade un nuevo artículo
-				annadir(elemento[0].replace("\"", ""), // quitamos comillas
-						String.valueOf(elemento[1]), // teléfono
-						String.valueOf(elemento[2]), // dirección
-						String.valueOf(elemento[3])); // correo electrónico
-				linea = csv.readLine();
-			}
+ /**
+  * Importamos la información de contactos a un archivo CSV.
+  * 
+  * @param archivo a importar
+  * @throws CSVException
+  */
+ public void importaCSV(String archivo) throws CSVException {
+  try {
+   BufferedReader csv = new BufferedReader(new FileReader(archivo));
+   String linea = csv.readLine();
+   linea = csv.readLine(); // lectura de la primera línea
+   while (linea != null) {
+     String[] elemento = linea.split(",");
+     // Con el método annadir se añade un nuevo artículo
+     annadir(elemento[0].replace("\"", ""), // quitamos comillas
+       String.valueOf(elemento[1]), // teléfono
+       String.valueOf(elemento[2]), // dirección
+       String.valueOf(elemento[3])); // correo electrónico
+     linea = csv.readLine();
+   }
+   csv.close();
 
-			csv.close();
+} catch (Exception e) {
+    throw new CSVException("Error de lectura en " + archivo);
+  }
+}
 
-		} catch (Exception e) {
-			throw new CSVException("Error de lectura en " + archivo);
-		}
-	}
-
-	/**
-	 * Mostramos todos los contactos de la agenda.
-	 */
-	@Override
-	public String toString() {
-		return "" + agenda;
-	}
+ /**
+  * Mostramos todos los contactos de la agenda.
+  */
+ @Override
+ public String toString() {
+   return "" + agenda;
+ }
 }
