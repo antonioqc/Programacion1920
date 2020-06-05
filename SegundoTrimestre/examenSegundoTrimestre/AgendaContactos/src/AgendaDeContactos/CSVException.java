@@ -1,8 +1,7 @@
 package AgendaDeContactos;
 
 /**
- * Excepción para exportar e importar el CSV.
- * 
+ * Excepción para exportar e importar el CSV. 
  * @author Antonio Quesada Cuadrado
  *
  */
