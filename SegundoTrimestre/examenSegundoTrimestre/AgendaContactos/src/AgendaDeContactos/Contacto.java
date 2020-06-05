@@ -21,7 +21,6 @@ package AgendaDeContactos;
  * Ten en cuenta de que en ninguna de estas clases se interactúa con el usuario.
  * 
  * @author Antonio Quesada Cuadrado
- *
  */
 
 public class Contacto {
