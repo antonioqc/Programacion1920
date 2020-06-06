@@ -33,7 +33,7 @@ import java.util.ArrayList;
 
 public class Agenda {
   private ArrayList<Contacto> agenda = new ArrayList<Contacto>();
-  static final int NUMMAXCONTACTOS = 100; // constante que asigna el valor máximo de contactos de la agenda.
+  private final int NUMMAXCONTACTOS = 100; // constante que asigna el valor máximo de contactos de la agenda.
 
   /**
    * Primer constructor vacío.
