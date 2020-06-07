@@ -34,7 +34,7 @@ import java.util.ArrayList;
 public class Agenda {
   private ArrayList<Contacto> agenda = new ArrayList<Contacto>();	
   private static final int NUMMAXCONTACTOS = 100; // constante para el numero maximo de contactos no modificable.
-  private int NUMMAXCONTACTOS = 100; // atributo de la clase no estático donde asignamos el valor máximo de contactos.
+  private int numMaxContactos = NUMMAXCONTACTOS; // atributo de la clase no estático donde asignamos el valor máximo de contactos.
 
   /**
    * Primer constructor vacío.
