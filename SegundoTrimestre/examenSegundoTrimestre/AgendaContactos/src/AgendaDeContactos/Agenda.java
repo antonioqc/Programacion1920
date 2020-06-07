@@ -62,7 +62,7 @@ public class Agenda {
    * @throws MaximoContactos
    */
   public void annadir(String nombre, String telefono, String direccion, String correoElectronico) throws MaximoContactosException, FormatoIntroducidoException {
-    if (agenda.size() >= numMaxContactos)
+    if (agenda.size() == numMaxContactos)
       throw new MaximoContactosException("Has sobrepasado el máximo de contactos que es 100.");
 
     agenda.add(new Contacto(nombre, telefono, direccion, correoElectronico));
