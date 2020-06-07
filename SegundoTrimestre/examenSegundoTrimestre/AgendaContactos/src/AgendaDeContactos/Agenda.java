@@ -95,7 +95,7 @@ public class Agenda {
    *         nombre.
    * @throws FormatoIntroducidoException
    */
-  public boolean baja(String nombre, String telefono) throws ContactoInexistenteException {
+  public boolean baja(String nombre, String telefono) throws FormatoIntroducidoException {
     return agenda.remove(new Contacto(nombre, telefono));
   }
 
