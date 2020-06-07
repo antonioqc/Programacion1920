@@ -66,40 +66,49 @@ public class Agenda {
 
     agenda.add(new Contacto(nombre, telefono, direccion, correoElectronico));
  }
+	
+  /**
+   * Devuelve la posición o el índice del contacto en función de su nombre y
+   * teléfono.
+   * 
+   * @param nombre
+   * @param telefono
+   * @return posicion 
+   * @throws ContactoInexistenteException
+   * @throws FormatoIntroducidoException
+   */
+  private Contacto get(String nombre, String telefono) throws ContactoInexistenteException, FormatoIntroducidoException {
+    try {
+      return agenda.get(agenda.indexOf(new Contacto(nombre,telefono)));
+
+    } catch (IndexOutOfBoundsException e) {
+      throw new ContactoInexistenteException("El contacto no existe.");
+    }
+  }
 
   /**
    * Borramos un contacto de la agenda.
+   * 
    * @param nombre del contacto a borrar
+   * @param telefono del contacto a borrar
    * @return valor booleano que devuelve la baja de un contacto a través del
    *         nombre.
-   * @throws ContactoInexistenteException
+   * @throws FormatoIntroducidoException
    */
-  public Contacto baja(String nombre, String telefono) throws ContactoInexistenteException {
-    for (Contacto contacto : agenda) {
-      if (nombre.contentEquals(contacto.getNombre())) {
-        return agenda.remove(agenda.indexOf(contacto));
-       } else {
-	throw new ContactoInexistenteException("El contacto a borrar no existe.");
-       }
-    }
-    return null;
+  public boolean baja(String nombre, String telefono) throws ContactoInexistenteException {
+    return agenda.remove(new Contacto(nombre, telefono));
   }
 
  /**
   * Busca toda la información de una contacto.
   * @param nombre
+  * @param telefono
   * @return contactos encontrados
   * @throws ContactoInexistenteException
+  * @throws FormatoIntroducidoException
   */
- public Contacto buscaContacto(String nombre, String telefono) throws ContactoInexistenteException {
-    for (Contacto contacto : agenda) {
-      if (nombre.contentEquals(contacto.getNombre())) {
-        return agenda.get(agenda.indexOf(contacto));
-       } else {
-	throw new ContactoInexistenteException("El contacto a borrar no existe.");
-       }
-    }
-    return null;
+ public Contacto buscaContacto(String nombre, String telefono) throws ContactoInexistenteException, FormatoIntroducidoException {
+   return get(nombre, telefono);
   }
 
  /**
