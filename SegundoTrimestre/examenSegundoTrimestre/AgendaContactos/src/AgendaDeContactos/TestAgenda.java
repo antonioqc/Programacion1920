@@ -84,8 +84,10 @@ public class TestAgenda {
     try {
       String nombre = Teclado.getTexto("Introduce el nombre del contacto a dar de baja: ");
       String telefono = Teclado.getTexto("Introduce el telefono del contacto a dar de baja: ");
-      agenda.baja(nombre, telefono);
-    } catch (ContactoInexistenteException e) {
+      if(!agenda.baja(nombre, telefono)) {
+	System.err.println("El nombre del contacto no existe.");
+      }
+    } catch (FormatoIntroducidoException e) {
       System.err.println(e.getMessage() + "\n");
     }
   }
@@ -96,8 +98,9 @@ public class TestAgenda {
   private static void buscaContacto() {
     try {
       String nombre = Teclado.getTexto("Introduce el nombre del contacto a buscar: ");
-      agenda.buscaContacto(nombre);
-    } catch (ContactoInexistenteException e) {
+      String telefono = Teclado.getTexto("Introduce el telefono del contacto a buscar: ");
+      agenda.buscaContacto(nombre,telefono);
+    } catch (ContactoInexistenteException | FormatoIntroducidoException e) {
       System.err.println(e.getMessage() + "\n");
     }
   }
