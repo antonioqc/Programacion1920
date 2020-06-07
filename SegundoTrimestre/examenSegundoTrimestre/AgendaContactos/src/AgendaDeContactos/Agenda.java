@@ -120,7 +120,7 @@ public class Agenda {
   * @throws MaximoContactosException
   */
  public void reduce(int numContactosActual) throws MaximoContactosException {
-   if (agenda.size() < numContactosActual && numContactosActual < numMaxContactos)
+   if (agenda.size() <= numContactosActual && numContactosActual < numMaxContactos)
      numMaxContactos = numContactosActual;
 
    throw new MaximoContactosException("No puedes reducir el tamaño de la agenda. Has introducido un número mayor a los contactos permitidos (100).");
