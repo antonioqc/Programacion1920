@@ -32,8 +32,9 @@ import java.util.ArrayList;
  */
 
 public class Agenda {
-  private ArrayList<Contacto> agenda = new ArrayList<Contacto>();
-  private int NUMMAXCONTACTOS = 100; // asigna el valor máximo de contactos de la agenda.
+  private ArrayList<Contacto> agenda = new ArrayList<Contacto>();	
+  private static final int NUMMAXCONTACTOS = 100; // constante para el numero maximo de contactos no modificable.
+  private int NUMMAXCONTACTOS = 100; // atributo de la clase no estático donde asignamos el valor máximo de contactos.
 
   /**
    * Primer constructor vacío.
@@ -61,7 +62,7 @@ public class Agenda {
    * @throws MaximoContactos
    */
   public void annadir(String nombre, String telefono, String direccion, String correoElectronico) throws MaximoContactosException, FormatoIntroducidoException {
-    if (agenda.size() >= NUMMAXCONTACTOS)
+    if (agenda.size() >= numMaxContactos)
       throw new MaximoContactosException("Has sobrepasado el máximo de contactos que es 100.");
 
     agenda.add(new Contacto(nombre, telefono, direccion, correoElectronico));
@@ -119,8 +120,8 @@ public class Agenda {
   * @throws MaximoContactosException
   */
  public void reduce(int numContactosActual) throws MaximoContactosException {
-   if (agenda.size() < numContactosActual && numContactosActual < 100)
-     NUMMAXCONTACTOS = numContactosActual;
+   if (agenda.size() < numContactosActual && numContactosActual < numMaxContactos)
+     numMaxContactos = numContactosActual;
 
    throw new MaximoContactosException("No puedes reducir el tamaño de la agenda. Has introducido un número mayor a los contactos permitidos (100).");
  }
