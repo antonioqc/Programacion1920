@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane hgap="10.0" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.Ej2FraccionControlador">
+   <children>
+      <Label text="Fracción 1" GridPane.halignment="CENTER" />
+      <TextField fx:id="numf1" alignment="CENTER" prefHeight="24.0" prefWidth="163.0" promptText="Numerador" GridPane.rowIndex="1" />
+      <Label text="Fracción 2" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+      <TextField fx:id="numf2" alignment="CENTER" promptText="Numerador" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="denf1" alignment="CENTER" promptText="Denominador" GridPane.rowIndex="3" />
+      <TextField fx:id="denf2" alignment="CENTER" promptText="Denominador" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <RadioButton fx:id="suma" mnemonicParsing="false" text="Suma" GridPane.columnIndex="3" GridPane.rowIndex="1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="resta" mnemonicParsing="false" text="Resta" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <Separator prefWidth="200.0" GridPane.rowIndex="2" />
+      <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <RadioButton fx:id="producto" mnemonicParsing="false" text="Producto" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="division" mnemonicParsing="false" text="División" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="numresultado" alignment="CENTER" editable="false" promptText="Numerador" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+      <TextField fx:id="denresultado" alignment="CENTER" editable="false" promptText="Denominador" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+      <Label text="Resultado" GridPane.columnIndex="6" GridPane.halignment="CENTER" />
+      <Separator prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+      <ToggleButton mnemonicParsing="false" onAction="#calcula" text="Calcula" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>
